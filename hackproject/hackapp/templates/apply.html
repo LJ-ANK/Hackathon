@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static tailwind_tags %}
+{% block content %}
+<section class="p-10">
+    <h2 class="text-3xl font-bold text-center">Apply for a Loan</h2>
+    <form method="post" class="max-w-lg mx-auto bg-white p-6 mt-6 shadow rounded">
+        {% csrf_token %}
+        <label class="block font-bold">Full Name</label>
+        <input type="text" name="name" class="w-full p-2 border rounded mb-4">
+
+        <label class="block font-bold">Loan Amount</label>
+        <input type="number" name="loan_amount" class="w-full p-2 border rounded mb-4">
+
+        <button type="submit" class="bg-green-700 text-white px-6 py-2 rounded">Submit</button>
+    </form>
+</section>
+{% endblock %}

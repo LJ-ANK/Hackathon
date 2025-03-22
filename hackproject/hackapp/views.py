@@ -25,3 +25,11 @@ def multi_step_form(request):
     else:
         form1 = FarmerDetailsForm()
         return render(request, 'multi_step_form.html', {'form': form1, 'step': 1}) 
+    
+
+def landing_page(request):
+    return render(request, 'landing.html')
+
+
+def apply_now(request):
+    return render(request, 'apply.html')
