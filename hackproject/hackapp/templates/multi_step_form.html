@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Farmer Registration</h1>
+<div class="step-indicator">Step {{ step }} of 2</div>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if step == 1 %}Next{% else %}Submit{% endif %}</button>
+</form>
+{% endblock %}

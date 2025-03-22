@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from hackapp.views import multi_step_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('form/', multi_step_form, name='multi_step_form'),
 ]
