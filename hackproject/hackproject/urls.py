@@ -15,8 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from hackapp.views import multi_step_form, landing_page, apply
+from django.urls import include, path
+
 
 urlpatterns = [
+    
+    path("_reload_/", include("django_browser_reload.urls")),
     path('admin/', admin.site.urls),
+    path('form/', multi_step_form, name='multi_step_form'),
+    path('', landing_page, name='landing'),
+    path('apply/', apply, name='apply'),
+    # path('apply/', apply_now, name='apply'),
 ]

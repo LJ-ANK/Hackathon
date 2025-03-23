@@ -1,0 +1,68 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+input {
+    width: 80% !important;
+    display: flex;
+    justify-self: center;
+}
+
+/* .input-field {
+    width: 3px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+} */
+
+#step1,
+#step2,
+#step3 {
+    text-align: center;
+    padding: 15px;
+    margin: 2vh;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.next-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.prev-btn {
+    background-color: #ccc;
+}
+
+.submit-btn {
+    background-color: #008CBA;
+    color: white;
+}
+
+.step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #ddd;
+    text-align: center;
+    font-weight: bold;
+}
+
+.step-number.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.form-step {
+    border: 1px solid black;
+    border-radius: 10px;
+}
