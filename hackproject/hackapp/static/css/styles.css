@@ -1,18 +1,19 @@
-/* hackproject/static/css/styles.css */
-
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
+    min-height: 100vh !important;
 }
 
 /* Container */
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* Header */
@@ -24,12 +25,14 @@ body {
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -42,6 +45,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .nav-link {
@@ -49,6 +53,7 @@ body {
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
+    padding: 5px;
 }
 
 .nav-link:hover {
@@ -63,30 +68,50 @@ body {
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
 }
 
 .apply-btn:hover {
     background-color: #d8f3dc;
 }
 
+/* Mobile Navigation */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
 /* Hero Section */
 .hero-section {
     background: linear-gradient(to bottom right, #f0f7f4, #d8f3dc);
-    padding: 80px 0;
+    padding: 60px 0;
     text-align: center;
-    min-height: 60vh;
+    min-height: 50vh;
     display: flex;
     align-items: center;
+    width: 100%;
+}
+
+.hero-text {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .hero-text h2 {
-    font-size: 40px;
+    font-size: 36px;
     color: #2d6a4f;
     margin-bottom: 20px;
 }
 
 .hero-text p {
-    font-size: 20px;
+    font-size: 18px;
     color: #666;
     max-width: 600px;
     margin: 0 auto 30px;
@@ -95,12 +120,13 @@ body {
 .btn-primary {
     background-color: #2d6a4f;
     color: white;
-    padding: 15px 30px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    display: inline-block;
 }
 
 .btn-primary:hover {
@@ -109,14 +135,15 @@ body {
 
 /* Content Sections */
 .content-section {
-    padding: 60px 0;
+    padding: 50px 0;
+    width: 100%;
 }
 
 .content-section h3 {
-    font-size: 32px;
+    font-size: 28px;
     color: #2d6a4f;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .about-content {
@@ -124,26 +151,28 @@ body {
     flex-wrap: wrap;
     gap: 30px;
     align-items: center;
+    justify-content: center;
 }
 
 .about-content p {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
     line-height: 1.6;
     color: #666;
 }
 
 .about-img {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
     max-width: 100%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Features Section */
 .features-section {
     background-color: #f0f7f4;
+    width: 100%;
 }
 
 .features-container {
@@ -156,10 +185,11 @@ body {
 .feature-card {
     background-color: white;
     padding: 20px;
-    width: 300px;
+    width: 280px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    margin-bottom: 20px;
 }
 
 .feature-card:hover {
@@ -187,12 +217,26 @@ body {
     text-decoration: underline;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
 /* Footer */
 .footer {
     background-color: #2d6a4f;
     color: white;
     padding: 20px 0;
     text-align: center;
+    margin-top: auto;
+    width: 100%;
 }
 
 .footer p {
@@ -201,20 +245,68 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    .hero-text h2 {
+        font-size: 32px;
+    }
+
+    .content-section h3 {
+        font-size: 26px;
+    }
+
+    .feature-card {
+        width: calc(50% - 20px);
+        min-width: 250px;
+    }
+}
+
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        order: 1;
+    }
+
     .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+        justify-content: space-between;
     }
 
     .nav {
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        order: 3;
+        margin-top: 0;
+        gap: 0;
+    }
+
+    .nav.active {
+        max-height: 300px;
+        margin-top: 15px;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 12px 0;
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0;
+    }
+
+    .apply-btn {
+        width: 100%;
+        margin-top: 10px;
+        box-sizing: border-box;
+        padding: 12px 0;
+    }
+
+    .hero-section {
+        padding: 40px 0;
     }
 
     .hero-text h2 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .hero-text p {
@@ -222,11 +314,85 @@ body {
     }
 
     .btn-primary {
-        padding: 12px 20px;
+        padding: 10px 20px;
         font-size: 16px;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-img {
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .content-section {
+        padding: 30px 0;
     }
 
     .content-section h3 {
-        font-size: 28px;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+/* For extremely small screens */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-link,
+    .apply-btn {
+        font-size: 14px;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    .header,
+    .footer,
+    .apply-btn,
+    .btn-primary {
+        display: none;
+    }
+
+    body {
+        color: black;
+        background: white;
+    }
+
+    .content-section {
+        page-break-inside: avoid;
     }
 }
