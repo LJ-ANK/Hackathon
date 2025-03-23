@@ -3,8 +3,8 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="hero-section">
-    <div class="container hero-text">
+<section class="hero-section" style="background: url('{% static 'images/image.png' %}') no-repeat center center/cover;">
+    <div id="image" class="container hero-text" >
         <h2>Alternative Credit Evaluation Tool for Farmers</h2>
         <p>Empowering farmers using GIS, soil health, and weather forecasts for fair credit scoring.</p>
         <a href="/apply" class="btn-primary">Get Started</a>
@@ -20,15 +20,15 @@
                 Traditional financial institutions often miss key variables like soil quality, climate risk, and market fluctuations. 
                 Our tool provides a comprehensive credit score based on dynamic agricultural and financial parameters, making lending inclusive and risk-assessed.
             </p>
-            <img src="https://images.unsplash.com/photo-1581349487540-7f35708ba818?auto=format&fit=crop&w=800&q=80" alt="Farm and soil data" class="about-img">
         </div>
     </div>
 </section>
 
+
 <!-- Features Section -->
-<section id="features" class="content-section features-section">
-    <div class="container">
-        <h3>Key Features</h3>
+<section id="features" class="content-section features-section" style="background: url('{% static 'images/image2.jpg' %}') no-repeat center center/cover;" >
+    <div class="container" >
+        <h3 id="k">Key Features</h3>
         <div class="features-container">
             <div class="feature-card">
                 <h4>Live GIS & Soil Data</h4>
@@ -47,11 +47,11 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="content-section">
-    <div class="container">
-        <h3>Contact Us</h3>
-        <p>Email: <a href="mailto:support@agricredit.com" class="contact-link">support@agricredit.com</a></p>
-        <p>Phone: <a href="tel:+919876543210" class="contact-link">+91 98765 43210</a></p>
+<section id="contact" class="content-section" style="background: url('{% static 'images/image3.jpg' %}') no-repeat center center/cover;">
+    <div class="container" >
+        <h3 id="c">Contact Us</h3>
+        <p id="p">Email: <a id="a" href="mailto:support@agricredit.com" class="contact-link">support@agricredit.com</a></p>
+        <p id="p">Phone: <a id="a" href="tel:+919876543210" class="contact-link">+91 98765 43210</a></p>
     </div>
 </section>
 

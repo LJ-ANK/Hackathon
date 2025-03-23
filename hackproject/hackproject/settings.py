@@ -17,9 +17,10 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [ BASE_DIR / 'static' ]  # if you have a global static folder
+
+
 
 TAILWIND_APP_NAME = 'theme'
 # Quick-start development settings - unsuitable for production

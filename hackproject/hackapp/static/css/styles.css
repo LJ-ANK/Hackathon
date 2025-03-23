@@ -106,16 +106,29 @@ body {
 
 .hero-text h2 {
     font-size: 36px;
-    color: #2d6a4f;
+    color: #000;
     margin-bottom: 20px;
 }
 
 .hero-text p {
     font-size: 18px;
-    color: #666;
+    color: #000;
     max-width: 600px;
     margin: 0 auto 30px;
 }
+
+.about-img {
+    width: 100%;
+    height: 300px; /* You can adjust this height as needed */
+    border-radius: 10px; /* Optional, for rounded corners */
+}
+
+@media screen and (max-width: 768px) {
+    .about-img {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+}
+
 
 .btn-primary {
     background-color: #2d6a4f;
@@ -141,7 +154,7 @@ body {
 
 .content-section h3 {
     font-size: 28px;
-    color: #2d6a4f;
+    color: #fff;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -158,7 +171,7 @@ body {
     flex: 1;
     min-width: 280px;
     line-height: 1.6;
-    color: #666;
+    color: #fff;
 }
 
 .about-img {
@@ -168,6 +181,10 @@ body {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#features{
+    margin-bottom: 10%;
 }
 
 .features-section {
@@ -194,6 +211,22 @@ body {
 
 .feature-card:hover {
     transform: translateY(-5px);
+}
+#k{
+    color: #000;
+}
+
+#c{
+    color: #fff;
+}
+
+#p{
+    font-weight: 700;
+    color: #fff;
+}
+#a{
+    font-weight: 700;
+    color: #fff;
 }
 
 .feature-card h4 {

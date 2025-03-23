@@ -30,10 +30,28 @@
                     if (currentStep < 3) {
                         currentStep++;
                         showStep(currentStep);
-                        if (currentStep === 2 && window.google && !window.mapInitialized) {
-                            console.log("Step 2 shown, initializing map manually"); // Debug
-                            initMap();
-                            window.mapInitialized = true;
+                        if (currentStep === 2) {
+                            console.log("Step 2 clicked, checking Google Maps API"); // Debug
+                            if (window.google && window.google.maps) {
+                                console.log("Google Maps API loaded, calling initMap"); // Debug
+                                if (!window.mapInitialized) {
+                                    initMap();
+                                    window.mapInitialized = true;
+                                }
+                            } else {
+                                console.error("Google Maps API not loaded yet, waiting..."); // Debug
+                                // Wait for the script to load
+                                const checkGoogle = setInterval(() => {
+                                    if (window.google && window.google.maps) {
+                                        console.log("Google Maps API loaded after wait, calling initMap"); // Debug
+                                        if (!window.mapInitialized) {
+                                            initMap();
+                                            window.mapInitialized = true;
+                                        }
+                                        clearInterval(checkGoogle);
+                                    }
+                                }, 500); // Check every 500ms
+                            }
                         }
                     }
                 });
@@ -50,23 +68,14 @@
         });
 
         // Google Maps functions
-        let map;
-        let currentShape = null;
-
-        function initMap() {
-            console.log("initMap called"); // Debug
+        window.initMap = function() { // Global scope for callback
+            console.log("initMap called via callback or manual trigger"); // Debug
             const mapDiv = document.getElementById('map');
             if (!mapDiv) {
                 console.error("Map div not found"); // Debug
                 return;
             }
             console.log("Map div found, initializing map"); // Debug
-
-            // Only initialize if Step 2 is visible
-            if (document.getElementById("step2").style.display !== "block") {
-                console.log("Step 2 not visible yet, deferring map init"); // Debug
-                return;
-            }
 
             map = new google.maps.Map(mapDiv, {
                 center: { lat: 20.5937, lng: 78.9629 }, // Default to India center
@@ -112,8 +121,21 @@
                 }
             );
 
-            window.mapInitialized = true; // Mark as initialized
+            window.mapInitialized = true;
             console.log("Map fully initialized"); // Debug
+        };
+
+        let map;
+        let currentShape = null;
+    </script>
+    <!-- Load Google Maps synchronously -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmxEPn4nG87XqjAeZSwNCqx2-mP1xU7P0&libraries=drawing&callback=initMap"></script>
+    <script>
+        console.log("Google Maps script included in head"); // Debug
+        if (window.google && window.google.maps) {
+            console.log("Google Maps API loaded immediately"); // Debug
+        } else {
+            console.log("Google Maps API not loaded yet in head"); // Debug
         }
     </script>
 {% endblock head %}
@@ -236,5 +258,5 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmxEPn4nG87XqjAeZSwNCqx2-mP1xU7P0&libraries=drawing&callback=initMap" async defer></script>
+    <!-- Removed async script from here since it's in head -->
 {% endblock %}
