@@ -136,9 +136,10 @@ def apply(request):
     # Now use the model to predict
             predicted_score = loaded_main_model.predict(input_data)
 
-            return HttpResponse(f"""Application submitted successfully!
-            Your credit score is {predicted_score, Soil_quality, weather}
-        """)
+            return render(request,'Credit_score.html',{'score':predicted_score})     
+        #     return HttpResponse(f"""Application submitted successfully!
+        #     Your credit score is {predicted_score, Soil_quality, weather}
+        # """)
         except Exception as e:
             return HttpResponse(f"Error: {str(e)}")
     return render(request, "apply.html")
