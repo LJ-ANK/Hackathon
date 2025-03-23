@@ -141,6 +141,7 @@
 {% endblock head %}
 
 {% block content %}
+
 <div class="min-h-screen flex flex-col justify-between">
     <div class="container mx-auto p-4">
         <h2 class="text-2xl font-bold text-center">Apply for AgriCredit</h2>
@@ -203,14 +204,14 @@
             <!-- Step 3: Financial Info -->
             <div id="step3" class="form-step">
                 <h3 class="text-xl font-semibold">Financial Information</h3>
-                <input type="number" name="assets_worth" placeholder="Assets Worth (in INR)" class="input-field" step="0.01" required>
+                <input type="number" name="assets_worth" placeholder="Assets Worth (in lacks)" class="input-field" step="0.01" required>
                 <p class="text-sm text-gray-600">Total estimated value of your farming assets (land, equipment, etc.) in Indian Rupees.</p>
                 <input type="number" name="previous_loans" placeholder="Previous Loans (in INR)" class="input-field" step="0.01">
-                <p class="text-sm text-gray-600">Total amount of loans you have taken in the past (in INR), if any.</p>
+                <p class="text-sm text-gray-600">Total number of loans you have taken in the past (in numbers), if any.</p>
                 <input type="number" name="paid_loans" placeholder="Paid Loans (in INR)" class="input-field" step="0.01">
-                <p class="text-sm text-gray-600">Total amount of previous loans you have fully repaid (in INR).</p>
+                <p class="text-sm text-gray-600">Total number of previous loans you have fully repaid (in numbers).</p>
                 <input type="number" name="ongoing_loans" placeholder="Ongoing Loans (in INR)" class="input-field" step="0.01">
-                <p class="text-sm text-gray-600">Total amount of current loans you are still repaying (in INR).</p>
+                <p class="text-sm text-gray-600">Total number of current loans you are still repaying (in numbers).</p>
                 {% comment %} <input type="text" name="assets_insurance_coverage" placeholder="Assets Insurance Coverage" class="input-field"> {% endcomment %}
                 Insurance Coverage:
                 <select name="assets_insurance_coverage" class="input-field" required>
