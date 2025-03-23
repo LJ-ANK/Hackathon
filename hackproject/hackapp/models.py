@@ -11,10 +11,10 @@ class Farmer(models.Model):
     crop_name = models.CharField(max_length=255)
     water_availability = models.CharField(max_length=255)
     land_ownership = models.CharField(max_length=255)
-    soil_quality = models.CharField(max_length=255, null=True, blank=True)
-    latitude = models.FloatField(null=True, blank=True)
-    longitude = models.FloatField(null=True, blank=True)
-    credit_score = models.FloatField(null=True, blank=True)
+    soil_quality = models.CharField(max_length=255,  blank=True)
+    latitude = models.FloatField(max_length=255,blank=True)
+    longitude = models.FloatField(max_length=255,blank=True)
+    credit_score = models.FloatField(max_length=255,blank=True)
 
     def __str__(self):
         return self.farmer_name

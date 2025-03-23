@@ -163,6 +163,7 @@
             <div id="step1" class="form-step">
                 <h3 class="text-xl font-semibold">Personal Information</h3>
                 <input type="text" name="farmer_name" placeholder="Farmer Name" class="input-field" required>
+                <p class="text-sm text-gray-600">Enter your full legal name as it appears on official documents.</p>
                 <button type="button" class="next-btn btn">Next</button>
             </div>
 
@@ -170,14 +171,30 @@
             <div id="step2" class="form-step">
                 <h3 class="text-xl font-semibold">Farm Information</h3>
                 <input type="number" name="land_area" placeholder="Land Area (in acres)" class="input-field" step="0.01" required>
+                <p class="text-sm text-gray-600">Specify the total area of your farmland in acres (e.g., 5.25).</p>
                 <input type="text" name="crop_name" placeholder="Crop Name" class="input-field" required>
-                <input type="text" name="water_availability" placeholder="Water Availability" class="input-field" required>
-                <input type="text" name="land_ownership" placeholder="Land Ownership (e.g., Owned/Leased)" class="input-field" required>
-                
+                <p class="text-sm text-gray-600">Enter the primary crop you cultivate on your land.</p>
+                Water availability:
+                <select name="water_availability" class="input-field" required>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                  </select>
+                <p class="text-sm text-gray-600">Indicate the availability of water resources for irrigation (High: abundant, Medium: moderate, Low: scarce).</p>
+                Land Ownership:
+                  <select name="land_ownership"  placeholder="Land Ownership" class="input-field" required>
+                    <option value="high">Owned</option>
+                    <option value="medium">Leased</option>
+                    <option value="low">Rented</option>
+                  </select>
+                <p class="text-sm text-gray-600">Specify whether you own, lease, or rent the land you farm on.</p>
                 <!-- Google Maps Integration -->
                 <div id="map" style="height: 300px; width: 100%; margin: 10px 0;"></div>
+                <p class="text-sm text-gray-600">Use the map to mark your farm's location by drawing a circle or polygon.</p>
                 <input type="text" id="latitude" name="latitude" placeholder="Latitude" class="input-field" readonly required>
+                <p class="text-sm text-gray-600">The latitude of your farm's location (automatically filled from the map).</p>
                 <input type="text" id="longitude" name="longitude" placeholder="Longitude" class="input-field" readonly required>
+                <p class="text-sm text-gray-600">The longitude of your farm's location (automatically filled from the map).</p>
 
                 <button type="button" class="prev-btn btn">Back</button>
                 <button type="button" class="next-btn btn">Next</button>
@@ -187,10 +204,20 @@
             <div id="step3" class="form-step">
                 <h3 class="text-xl font-semibold">Financial Information</h3>
                 <input type="number" name="assets_worth" placeholder="Assets Worth (in INR)" class="input-field" step="0.01" required>
+                <p class="text-sm text-gray-600">Total estimated value of your farming assets (land, equipment, etc.) in Indian Rupees.</p>
                 <input type="number" name="previous_loans" placeholder="Previous Loans (in INR)" class="input-field" step="0.01">
+                <p class="text-sm text-gray-600">Total amount of loans you have taken in the past (in INR), if any.</p>
                 <input type="number" name="paid_loans" placeholder="Paid Loans (in INR)" class="input-field" step="0.01">
+                <p class="text-sm text-gray-600">Total amount of previous loans you have fully repaid (in INR).</p>
                 <input type="number" name="ongoing_loans" placeholder="Ongoing Loans (in INR)" class="input-field" step="0.01">
-                <input type="text" name="assets_insurance_coverage" placeholder="Assets Insurance Coverage" class="input-field">
+                <p class="text-sm text-gray-600">Total amount of current loans you are still repaying (in INR).</p>
+                {% comment %} <input type="text" name="assets_insurance_coverage" placeholder="Assets Insurance Coverage" class="input-field"> {% endcomment %}
+                Insurance Coverage:
+                <select name="assets_insurance_coverage" class="input-field" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                <p class="text-sm text-gray-600">Indicate whether your farming assets are covered by insurance.</p>
                 <button type="button" class="prev-btn btn">Back</button>
                 <button type="submit" class="submit-btn btn">Submit</button>
             </div>
