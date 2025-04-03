@@ -15,4 +15,4 @@ Traditional credit evaluation methods often fail to capture the unique challenge
 
 **Regulatory Compliance:** Ensure adherence to financial regulations and data privacy laws.
 
-[Watch the video](https://github.com/LJ-ANK/Hackathon/new/main?filename=README.md)
+[Watch the video]([https://github.com/LJ-ANK/Hackathon/new/main?filename=README.md](https://drive.google.com/file/d/170G4EASTlMTHw9meKPy86nRc8u3jcGVI/view?usp=sharing))
