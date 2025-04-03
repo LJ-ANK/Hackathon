@@ -1,4 +1,4 @@
-**Alternative Credit Evaluation Tool for Farmers.**
+****Alternative Credit Evaluation Tool for Farmers.****
 Fintech project
 
 Traditional credit evaluation methods often fail to capture the unique challenges and opportunities faced by farmers. Factors such as land quality, weather patterns, and crop yield potential play a significant role in determining a farmer's creditworthiness. Your challenge is to design an Alternative Credit Evaluation Tool that incorporates non-traditional data sources such as live GIS (Geographic Information System) data, upcoming weather forecasts, soil health metrics, etc., to create a more inclusive credit scoring system for farming loans. The tool should help financial institutions assess risk more accurately and enable farmers to access fair and tailored credit options.
