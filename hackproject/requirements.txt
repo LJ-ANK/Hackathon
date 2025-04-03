@@ -1,0 +1,14 @@
+asgiref==3.8.1
+Django==5.1.7
+django-browser-reload==1.18.0
+django-tailwind==3.8.0
+mysqlclient==2.2.7
+numpy==2.2.4
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2025.1
+scipy==1.15.2
+six==1.17.0
+sqlparse==0.5.3
+tzdata==2025.1
+xgboost==3.0.0
